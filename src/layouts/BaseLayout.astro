@@ -1,0 +1,24 @@
+---
+import "@fontsource-variable/josefin-sans";
+import { ViewTransitions } from "astro:transitions";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <style>
+      body {
+        font-family: "Josefin Sans Variable", sans-serif;
+      }
+    </style>
+    <ViewTransitions />
+  </head>
+  <body class="min-h-screen bg-amber-50 p-8">
+    <slot />
+  </body>
+</html>
