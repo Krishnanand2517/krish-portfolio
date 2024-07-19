@@ -3,19 +3,19 @@ import { Astronav, MenuItems, MenuIcon, StickyHeader } from "astro-navbar";
 ---
 
 <StickyHeader
-  class="sticky top-2 border-b z-20 lg:flex p-4 gap-5 transition-all"
+  class="sticky top-2 border-b z-20 lg:flex p-2 lg:p-4 gap-5 transition-all"
   scrollY={50}
-  defaultClass="py-5 border-transparent text-gray-600"
+  defaultClass="py-3 lg:py-5 border-transparent text-gray-600"
   activeClass="py-2 bg-black/40 text-white border-gray-200 backdrop-blur-sm rounded-md"
 >
   <Astronav>
-    <div class="flex w-full justify-between">
+    <div class="flex w-full justify-between items-center">
       <a
         href="/"
         class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
         >Krishnanand Yadav</a
       >
-      <div class="block lg:hidden">
+      <div class="flex items-center lg:hidden">
         <MenuIcon class="w-4 h-4 text-gray-800" />
       </div>
     </div>
