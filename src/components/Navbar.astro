@@ -5,22 +5,50 @@ import { Astronav, MenuItems, MenuIcon, StickyHeader } from "astro-navbar";
 <StickyHeader
   class="sticky top-2 border-b z-20 lg:flex p-4 gap-5 transition-all"
   scrollY={50}
-  defaultClass="py-5 border-transparent"
-  activeClass="py-2 bg-black/30 border-gray-200 backdrop-blur-sm rounded-md"
+  defaultClass="py-5 border-transparent text-gray-600"
+  activeClass="py-2 bg-black/40 text-white border-gray-200 backdrop-blur-sm rounded-md"
 >
   <Astronav>
     <div class="flex w-full justify-between">
-      <a href="/">Krishnanand Yadav</a>
+      <a
+        href="/"
+        class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+        >Krishnanand Yadav</a
+      >
       <div class="block lg:hidden">
         <MenuIcon class="w-4 h-4 text-gray-800" />
       </div>
     </div>
     <MenuItems class="hidden lg:flex">
-      <ul class="flex flex-col lg:flex-row lg:gap-5">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/contact">Contact</a></li>
+      <ul class="flex flex-col lg:flex-row lg:items-center lg:gap-5">
+        <li>
+          <a
+            href="/"
+            class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/projects"
+            class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contact"
+            class="p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+            >Contact</a
+          >
+        </li>
       </ul>
     </MenuItems>
   </Astronav>
