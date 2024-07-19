@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/josefin-sans";
 import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+
 const { pageTitle } = Astro.props;
 ---
 
@@ -18,7 +20,11 @@ const { pageTitle } = Astro.props;
     </style>
     <ViewTransitions />
   </head>
-  <body class="min-h-screen bg-amber-50 p-8">
-    <slot />
+  <body class="min-h-screen bg-amber-50 py-8 px-8 lg:px-40">
+    <Navbar />
+
+    <main class="px-4">
+      <slot />
+    </main>
   </body>
 </html>
