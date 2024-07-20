@@ -6,12 +6,17 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon({
-    include: {
-      mdi: ["*"],
-      // (Default) Loads entire Material Design Icon set
-      cib: ["*"],
-      "simple-icons": ["*"]
-    }
-  }), react()]
+  integrations: [
+    tailwind(),
+    icon({
+      include: {
+        mdi: ["*"],
+        // (Default) Loads entire Material Design Icon set
+        cib: ["*"],
+        "simple-icons": ["*"],
+        "skill-icons": ["*"],
+      },
+    }),
+    react(),
+  ],
 });
