@@ -43,7 +43,10 @@ export const projectsData = [
     ],
     liveLink: "/",
     code: "https://github.com/Krishnanand2517/krish-portfolio",
-    descriptionPoints: ["The website that you're looking at right now!"],
+    descriptionPoints: [
+      "The website that you're looking at right now!",
+      "Fully responsive and mobile friendly.",
+    ],
     bgColor: "bg-amber-100/40 lg:bg-transparent hover:bg-amber-100/40",
   },
   {
