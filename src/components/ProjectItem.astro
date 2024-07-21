@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { project } = Astro.props;
+---
+
+<div
+  class={`px-2 py-4 lg:p-6 ${project.bgColor} hover:shadow-2xl border border-black/60 rounded-md group transition-all duration-700`}
+>
+  <h1 class="text-xl lg:text-2xl text-center">{project.name}</h1>
+
+  <div class="my-3 flex justify-center items-center gap-4">
+    {project.skillIcons.map((icon) => <Icon name={icon} size={24} />)}
+  </div>
+
+  <div class="mt-3 mb-4 flex justify-evenly gap-8">
+    <a
+      href={project.liveLink}
+      class="text-sm lg:text-base flex gap-1 items-center p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+      target="_blank"
+    >
+      <Icon name="mdi:link" size={20} />
+      <span>{project.name === "WarTime Game" ? "Game" : "Live"} Link</span>
+    </a>
+    <a
+      href={project.code}
+      class="text-sm lg:text-base flex gap-1 items-center p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
+      target="_blank"
+    >
+      <Icon
+        name={project.name === "WarTime Game" ? "mdi:video" : "mdi:code-braces"}
+        size={16}
+      />
+      <span>{project.name === "WarTime Game" ? "Video" : "Code"}</span>
+    </a>
+  </div>
+
+  <div
+    class="bg-black/10 p-4 rounded-md lg:text-black/20 group-hover:text-black transition-colors duration-300"
+  >
+    <ul class="text-sm lg:text-base list-disc list-inside flex flex-col gap-2">
+      {project.descriptionPoints.map((point) => <li>{point}</li>)}
+    </ul>
+  </div>
+</div>
