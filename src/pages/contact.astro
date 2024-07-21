@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Contact | Krishnanand Yadav";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1 class="text-xl lg:text-3xl font-bold mt-4 mb-8">Contact</h1>
+
+  <p class="text-sm lg:text-base">
+    Reach out to me on these channels:
+    <ul class="mt-3">
+      <li>
+        <a
+          href="mailto:krishnanand2517@gmail.com"
+          class="flex gap-2 font-bold p-2 text-sm lg:text-base hover:bg-black/10 rounded-md transition-colors duration-300"
+          ><Icon name="mdi:email" size={24} /> Email</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/Krishnanand2517"
+          target="_blank"
+          class="flex gap-2 font-bold p-2 text-sm lg:text-base hover:bg-black/10 rounded-md transition-colors duration-300"
+          ><Icon name="mdi:github" size={24} /> GitHub</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/krishnanandyadav"
+          target="_blank"
+          class="flex gap-2 font-bold p-2 text-sm lg:text-base hover:bg-black/10 rounded-md transition-colors duration-300"
+          ><Icon name="mdi:linkedin" size={24} /> LinkedIn</a
+        >
+      </li>
+    </ul>
+  </p>
+
+  <p class="my-6 lg:flex gap-4 items-center text-sm lg:text-base">
+    Some games I have made: <a
+      href="https://krishnanand.itch.io"
+      target="_blank"
+      class="flex gap-2 font-bold p-2 text-sm lg:text-base hover:bg-black/10 rounded-md transition-colors duration-300"
+      ><Icon name="cib:itch-io" size={24} /> My itch.io page</a
+    >
+  </p>
+
+  <p class="mb-10 lg:flex gap-4 items-center text-center text-sm lg:text-base">
+    I write blogs here: <a
+      href="https://krishnanand.hashnode.dev"
+      target="_blank"
+      class="flex gap-2 font-bold p-2 text-sm lg:text-base hover:bg-black/10 rounded-md transition-colors duration-300"
+      ><Icon name="simple-icons:hashnode" size={24} /> Bits &amp; Bytes on Hashnode</a
+    >
+  </p>
+</BaseLayout>
