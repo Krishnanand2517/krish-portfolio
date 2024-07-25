@@ -33,7 +33,7 @@ export const projectsData = [
     liveLink: "https://money-diary-app.vercel.app",
     code: "https://github.com/Krishnanand2517/money-diary",
     descriptionPoints: [
-      "A 'Money Diary' to achieve financial goals and limit expenses.",
+      "A 'Money Diary' to set financial goals and limit expenses.",
       "Create & manage 'target budgets' and 'expense budgets'.",
       "Create account using OTP verification with email.",
       "Use social providers (Google and GitHub) to sign in.",
