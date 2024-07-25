@@ -22,6 +22,27 @@ export const projectsData = [
     bgColor: "bg-purple-50 lg:bg-transparent hover:bg-purple-50",
   },
   {
+    name: "Money Diary",
+    skillIcons: [
+      "skill-icons:typescript",
+      "skill-icons:nextjs-dark",
+      "skill-icons:react-dark",
+      "skill-icons:tailwindcss-dark",
+      "skill-icons:supabase-dark",
+    ],
+    liveLink: "https://money-diary-app.vercel.app",
+    code: "https://github.com/Krishnanand2517/money-diary",
+    descriptionPoints: [
+      "A 'Money Diary' to achieve financial goals and limit expenses.",
+      "Create & manage 'target budgets' and 'expense budgets'.",
+      "Create account using OTP verification with email.",
+      "Use social providers (Google and GitHub) to sign in.",
+      "'Forgot Password' feature.",
+      "Light/Dark theme.",
+    ],
+    bgColor: "bg-orange-100 lg:bg-transparent hover:bg-orange-100",
+  },
+  {
     name: "WarTime Game",
     skillIcons: ["skill-icons:unity-dark", "skill-icons:cs"],
     liveLink: "https://krishnanand.itch.io/wartime",
