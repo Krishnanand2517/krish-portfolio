@@ -1,5 +1,25 @@
 export const projectsData = [
   {
+    name: "WeTalk",
+    skillIcons: [
+      "skill-icons:typescript",
+      "skill-icons:react-dark",
+      "skill-icons:tailwindcss-dark",
+      "skill-icons:nodejs-dark",
+      "simple-icons:webrtc",
+      "simple-icons:socketdotio",
+    ],
+    liveLink: "https://we-talk-webrtc.vercel.app",
+    code: "https://github.com/Krishnanand2517/webrtc-video-chat",
+    descriptionPoints: [
+      "A Peer-to-Peer video chat platform.",
+      "Low latency video stream using WebRTC.",
+      "Created a signalling server using Socket.IO and NodeJS.",
+      "Mobile Friendly!",
+    ],
+    bgColor: "bg-red-50 lg:bg-transparent hover:bg-red-50",
+  },
+  {
     name: "Project Ignite",
     skillIcons: [
       "skill-icons:javascript",
