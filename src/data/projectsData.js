@@ -14,7 +14,7 @@ export const projectsData = [
     descriptionPoints: [
       "A Peer-to-Peer video chat platform.",
       "Low latency video stream using WebRTC.",
-      "Created a signalling server using Socket.IO and NodeJS.",
+      "Text chat feature using SocketIO.",
       "Mobile Friendly!",
     ],
     bgColor: "bg-red-50 lg:bg-transparent hover:bg-red-50",
