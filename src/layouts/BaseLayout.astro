@@ -3,6 +3,7 @@ import "@fontsource-variable/josefin-sans";
 import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
 ---
@@ -20,16 +21,74 @@ const { pageTitle } = Astro.props;
     <style>
       body {
         font-family: "Josefin Sans Variable", sans-serif;
+        position: relative;
+        z-index: 1;
+        background-color: #fffaf0;
+        background-image: radial-gradient(
+            ellipse at center,
+            transparent 15%,
+            #fffbeb 85%
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.04) 0 1px,
+            transparent 1px 40px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.04) 0 1px,
+            transparent 1px 40px
+          );
+        background-size:
+          100% 100%,
+          40px 40px,
+          40px 40px;
+        background-repeat: no-repeat, repeat, repeat;
+        background-attachment: fixed;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60vw;
+        height: 50vh;
+        background: radial-gradient(
+          circle,
+          rgba(251, 191, 36, 0.15),
+          transparent 70%
+        );
+        filter: blur(120px);
+        z-index: -1;
+      }
+
+      @keyframes contentFadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .content-fade-in {
+        animation: contentFadeInUp 0.6s ease-out backwards;
       }
     </style>
     <ViewTransitions />
   </head>
   <body
-    class="min-h-screen bg-amber-50 py-2 lg:py-8 px-4 lg:px-40 xl:px-56 2xl:px-72 flex flex-col selection:bg-black/90 selection:text-white"
+    class="min-h-screen py-2 lg:py-8 px-4 lg:px-40 xl:px-56 2xl:px-72 flex flex-col selection:bg-black/90 selection:text-white"
   >
     <Navbar />
 
-    <main class="px-2 lg:px-4 flex flex-1 flex-col justify-center items-center">
+    <main
+      class="px-2 lg:px-4 flex flex-1 flex-col justify-center items-center content-fade-in"
+    >
       <slot />
     </main>
 
