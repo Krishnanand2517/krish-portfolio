@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/josefin-sans";
 import { ViewTransitions } from "astro:transitions";
+import Analytics from "@vercel/analytics/astro";
+
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -80,6 +82,7 @@ const { pageTitle } = Astro.props;
       }
     </style>
     <ViewTransitions />
+    <Analytics />
   </head>
   <body
     class="min-h-screen py-2 lg:py-8 px-4 lg:px-40 xl:px-56 2xl:px-72 flex flex-col selection:bg-black/90 selection:text-white"
