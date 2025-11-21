@@ -1,10 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero";
+import About from "../components/About.astro";
 
 const pageTitle = "Krishnanand Yadav";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Hero client:load />
+  <section class="min-h-screen w-full flex items-center justify-center">
+    <Hero client:load />
+  </section>
+
+  <section id="about" class="min-h-screen">
+    <About />
+  </section>
 </BaseLayout>

@@ -87,11 +87,11 @@ const { pageTitle } = Astro.props;
   <body
     class="min-h-screen py-2 lg:py-8 px-4 lg:px-40 xl:px-56 2xl:px-72 flex flex-col selection:bg-black/90 selection:text-white"
   >
-    <Navbar />
+    <div class="fixed top-2 left-0 right-0 px-4 lg:px-40 xl:px-56 2xl:px-72">
+      <Navbar />
+    </div>
 
-    <main
-      class="px-2 lg:px-4 flex flex-1 flex-col justify-center items-center content-fade-in"
-    >
+    <main class="px-2 lg:px-4 flex flex-1 flex-col content-fade-in">
       <slot />
     </main>
 
