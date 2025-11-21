@@ -21,6 +21,9 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: "Josefin Sans Variable", sans-serif;
         position: relative;
@@ -96,5 +99,7 @@ const { pageTitle } = Astro.props;
     </main>
 
     <Footer />
+
+    <script type="module" src="/src/scripts/scroll-offset.js"></script>
   </body>
 </html>
