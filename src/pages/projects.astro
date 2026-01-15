@@ -8,14 +8,12 @@ import ProjectText from "../components/ProjectText";
 const pageTitle = "Projects | Krishnanand Yadav";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h1 class="text-xl lg:text-3xl font-bold mt-4 mb-8">Projects</h1>
+<h1 class="text-xl lg:text-3xl font-bold mt-4 mb-8">Projects</h1>
 
-  <div class="flex flex-col gap-24">
-    {projectsData.map((project) => <ProjectItem project={project} />)}
-  </div>
+<div class="flex flex-col gap-24">
+  {projectsData.map((project) => <ProjectItem project={project} />)}
+</div>
 
-  <div class="my-20">
-    <ProjectText client:load />
-  </div>
-</BaseLayout>
+<div class="my-20">
+  <ProjectText client:load />
+</div>
