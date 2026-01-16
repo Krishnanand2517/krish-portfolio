@@ -1,13 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-const pageTitle = "Contact | Krishnanand Yadav";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h1 class="text-xl lg:text-3xl font-bold mt-4 mb-8">Contact</h1>
+<h1 class="text-xl lg:text-3xl font-bold mt-4 mb-8">Get in Touch</h1>
 
+<div class="flex flex-col items-center">
   <p class="text-sm lg:text-base">
     Reach out to me on these channels:
     <ul class="mt-3">
@@ -54,4 +51,4 @@ const pageTitle = "Contact | Krishnanand Yadav";
       ><Icon name="simple-icons:hashnode" size={24} /> Bits &amp; Bytes on Hashnode</a
     >
   </p>
-</BaseLayout>
+</div>

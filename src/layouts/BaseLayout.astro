@@ -21,16 +21,16 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         font-family: "Josefin Sans Variable", sans-serif;
         position: relative;
         z-index: 1;
         background-color: #fffaf0;
-        background-image: radial-gradient(
-            ellipse at center,
-            transparent 15%,
-            #fffbeb 85%
-          ),
+        background-image:
+          radial-gradient(ellipse at center, transparent 15%, #fffbeb 85%),
           repeating-linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.04) 0 1px,
@@ -85,16 +85,20 @@ const { pageTitle } = Astro.props;
     <Analytics />
   </head>
   <body
-    class="min-h-screen py-2 lg:py-8 px-4 lg:px-40 xl:px-56 2xl:px-72 flex flex-col selection:bg-black/90 selection:text-white"
+    class="min-h-screen py-2 lg:py-8 px-4 lg:px-40 xl:px-80 2xl:px-[540px] flex flex-col selection:bg-black/90 selection:text-white cursor-cell"
   >
-    <Navbar />
-
-    <main
-      class="px-2 lg:px-4 flex flex-1 flex-col justify-center items-center content-fade-in"
+    <div
+      class="fixed top-2 left-0 right-0 px-4 lg:px-40 xl:px-80 2xl:px-[540px]"
     >
+      <Navbar />
+    </div>
+
+    <main class="px-2 lg:px-4 flex flex-1 flex-col content-fade-in">
       <slot />
     </main>
 
     <Footer />
+
+    <script type="module" src="/src/scripts/scroll-offset.js"></script>
   </body>
 </html>
