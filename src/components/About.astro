@@ -1,80 +1,34 @@
 ---
 import { Icon } from "astro-icon/components";
+
+import { skillsData } from "../data/skillsData";
 ---
 
 <h1 class="text-xl lg:text-3xl font-bold my-4">About Me</h1>
 <p class="text-sm lg:text-base">
-  I’m a software engineer based in India who genuinely enjoys building clean,
+  I'm a software engineer based in India who genuinely enjoys building clean,
   user-friendly, and well-crafted products. I enjoy solving real problems with
-  simple, maintainable solutions. When I’m not working, I’m usually reading,
+  simple, maintainable solutions. When I'm not working, I'm usually reading,
   writing, planning trips, or experimenting with new ideas in code.
 </p>
 
 <div class="my-12">
   <div class="flex flex-col gap-10">
-    <!-- Languages -->
-    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6 items-center">
-      <h3 class="w-full lg:w-auto lg:text-lg font-bold">Languages</h3>
-      <div class="lg:ml-6 flex flex-wrap items-center gap-6">
-        <Icon name="skill-icons:typescript" size={32} />
-        <Icon name="skill-icons:javascript" size={32} />
-        <Icon name="skill-icons:python-light" size={32} />
-        <Icon name="skill-icons:cpp" size={32} />
-      </div>
-    </div>
-
-    <!-- Frontend -->
-    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6 items-center">
-      <h3 class="w-full lg:w-auto lg:text-lg font-bold">Frontend</h3>
-      <div class="lg:ml-10 flex flex-wrap items-center gap-6">
-        <Icon name="skill-icons:react-dark" size={32} />
-        <Icon name="skill-icons:nextjs-light" size={32} />
-        <Icon name="skill-icons:redux" size={32} />
-        <Icon name="skill-icons:astro" size={32} />
-        <Icon name="skill-icons:tailwindcss-dark" size={32} />
-        <Icon name="skill-icons:materialui-dark" size={32} />
-      </div>
-    </div>
-
-    <!-- Backend -->
-    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6 items-center">
-      <h3 class="w-full lg:w-auto lg:text-lg font-bold">Backend</h3>
-      <div class="lg:ml-11 flex flex-wrap items-center gap-6">
-        <Icon name="skill-icons:nodejs-dark" size={32} />
-        <Icon name="skill-icons:expressjs-dark" size={32} />
-        <Icon name="simple-icons:bun" size={32} />
-        <Icon name="skill-icons:graphql-dark" size={32} />
-        <!-- <Icon name="skill-icons:redis-dark" size={32} />
-        <Icon name="skill-icons:kafka" size={32} /> -->
-        <Icon name="simple-icons:socketdotio" size={32} />
-        <Icon name="simple-icons:webrtc" size={32} />
-      </div>
-    </div>
-
-    <!-- Databases -->
-    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6 items-center">
-      <h3 class="w-full lg:w-auto lg:text-lg font-bold">Databases</h3>
-      <div class="lg:ml-6 flex flex-wrap items-center gap-6">
-        <Icon name="skill-icons:postgresql-dark" size={32} />
-        <Icon name="skill-icons:mysql-dark" size={32} />
-        <Icon name="skill-icons:mongodb" size={32} />
-        <Icon name="skill-icons:supabase-dark" size={32} />
-      </div>
-    </div>
-
-    <!-- Dev Tools -->
-    <div class="w-full flex flex-wrap lg:flex-nowrap gap-6 items-center">
-      <h3 class="w-full lg:w-auto lg:text-lg font-bold">Dev Tools</h3>
-      <div class="lg:ml-8 flex flex-wrap items-center gap-6">
-        <Icon name="skill-icons:git" size={32} />
-        <Icon name="skill-icons:docker" size={32} />
-        <Icon name="simple-icons:nginx" size={32} />
-        <Icon name="skill-icons:vercel-dark" size={32} />
-        <Icon name="skill-icons:jest" size={32} />
-        <Icon name="skill-icons:postman" size={32} />
-        <Icon name="skill-icons:apollo" size={32} />
-      </div>
-    </div>
+    {
+      Object.entries(skillsData).map(([category, items]) => (
+        <div class="w-full flex flex-col gap-6 items-start">
+          <h3 class="w-full lg:w-auto lg:text-lg font-bold">{category}</h3>
+          <div class="lg:ml-6 flex flex-wrap items-center gap-3">
+            {items.map((skill) => (
+              <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100/80 border border-dashed border-zinc-700 rounded-lg hover:scale-95 transition-all">
+                <Icon name={skill.icon} size={20} />
+                <span class="text-sm font-medium">{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
   </div>
 </div>
 
