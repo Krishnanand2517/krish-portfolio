@@ -10,7 +10,7 @@ My Portfolio website to showcase my skills and projects. Built with Astro.
 
 ## Live Link
 
-You can check out the Portfolio website [here](link-yet-to-be-added).
+You can check out the Portfolio website [here](https://krishnanand.info).
 
 ## Technologies Used
 
@@ -18,6 +18,8 @@ You can check out the Portfolio website [here](link-yet-to-be-added).
 - [React](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Typed.js](https://github.com/mattboldt/typed.js/)
+- Deployed on [Oracle Cloud Infrastructure](https://www.oracle.com/cloud/)
+- Reverse Proxy by [nginx](https://nginx.org/)
 
 ## Running the Project Locally
 
@@ -25,9 +27,7 @@ These instructions will help you set up a copy of the project on your local mach
 
 ### Prerequisites
 
-Before getting started, make sure you have Node.js `v18.17.1` or `v20.3.0` or higher (`v19` is not supported) installed on your machine.
-
-Also, you must have `npm` (Node Package Manager) installed on your machine.
+Before getting started, make sure you have `Node.js` and `npm` (Node Package Manager) installed on your machine.
 
 ### Installing & Usage
 

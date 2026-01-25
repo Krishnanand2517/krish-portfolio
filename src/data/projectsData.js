@@ -90,6 +90,7 @@ export const projectsData = [
     descriptionPoints: [
       "The website that you're looking at right now!",
       "Fully responsive and mobile friendly.",
+      "Deployed on Oracle Cloud Infrastructure (OCI), with Nginx as a reverse proxy and set up HTTPS using Let’s Encrypt and Certbot.",
     ],
     bgColor: "bg-amber-100/40 lg:bg-transparent hover:bg-amber-100/40",
   },
