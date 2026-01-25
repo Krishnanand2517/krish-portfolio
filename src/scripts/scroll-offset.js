@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const OFFSET = 80;
 
+  // Handle initial hash on page load
   if (window.location.hash) {
     const target = document.querySelector(window.location.hash);
     if (target) {
@@ -12,12 +13,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
+  // Use event delegation and capture phase to intercept earlier
+  document.addEventListener(
+    "click",
+    function (e) {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      // Skip empty hashes
+      if (href === "#") return;
+
+      const target = document.querySelector(href);
       if (!target) return;
 
       e.preventDefault();
+      e.stopPropagation(); // Stop the event from bubbling to astro-navbar
 
       const topPos =
         target.getBoundingClientRect().top + window.scrollY - OFFSET;
@@ -25,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         top: topPos,
         behavior: "smooth",
       });
-    });
-  });
+    },
+    true,
+  ); // Use capture phase (true) to intercept before astro-navbar
 });
