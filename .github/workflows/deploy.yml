@@ -1,0 +1,48 @@
+name: Zero Downtime Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Type Check
+        run: npm run build
+
+      - name: Set Release Name
+        run: echo "RELEASE=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+
+      - name: Copy Files to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "dist/*"
+          target: "/var/www/krish-portfolio/releases/${{ env.RELEASE }}"
+
+      - name: Switch Symlink and Auto-Cleanup Old Releases
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            ln -sfn /var/www/krish-portfolio/releases/${{ env.RELEASE }} /var/www/krish-portfolio/current
+            ls -dt /var/www/krish-portfolio/releases/* | tail -n +6 | xargs rm -rf
+            sudo systemctl reload nginx
