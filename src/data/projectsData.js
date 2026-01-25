@@ -5,6 +5,7 @@ export const projectsData = [
       "skill-icons:typescript",
       "skill-icons:react-dark",
       "skill-icons:tailwindcss-dark",
+      "skill-icons:postgresql-dark",
       "skill-icons:supabase-dark",
       "simple-icons:tldraw",
     ],

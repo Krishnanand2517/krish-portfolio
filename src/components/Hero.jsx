@@ -9,7 +9,7 @@ export default function Hero() {
       stringsElement: "#typed-strings",
       loop: true,
       smartBackspace: true,
-      typeSpeed: 50,
+      typeSpeed: 40,
     });
 
     return () => {
@@ -32,12 +32,16 @@ export default function Hero() {
           I am Krishnanand Yadav
         </h1>
 
+        <h2 className="lg:text-2xl font-semibold my-2">
+          <span className="whitespace-nowrap">Full Stack Developer</span>
+        </h2>
+
         <div id="typed-strings" className="hidden">
-          <p>A Software Engineer</p>
-          <p>A Full Stack Developer</p>
-          <p>A Game Developer</p>
+          <p>I build scalable web applications</p>
+          <p>I craft clean, maintainable code</p>
+          <p>I turn ideas into real products</p>
         </div>
-        <span ref={el} className="lg:text-lg"></span>
+        <span ref={el} className="text-sm lg:text-lg"></span>
       </div>
 
       <button
