@@ -22,8 +22,8 @@ export const skillsData = {
     { icon: "simple-icons:webrtc", name: "WebRTC" },
   ],
   Databases: [
-    { icon: "skill-icons:postgresql-dark", name: "PostgreSQL" },
-    { icon: "skill-icons:mysql-dark", name: "MySQL" },
+    { icon: "skill-icons:postgresql-light", name: "PostgreSQL" },
+    { icon: "skill-icons:mysql-light", name: "MySQL" },
     { icon: "skill-icons:mongodb", name: "MongoDB" },
     { icon: "skill-icons:supabase-dark", name: "Supabase" },
   ],
