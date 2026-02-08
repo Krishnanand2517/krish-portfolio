@@ -2,10 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero";
 import About from "../components/About.astro";
+import Experience from "./experience.astro";
 import Projects from "./projects.astro";
 import Contact from "./contact.astro";
 
-const pageTitle = "Krishnanand Yadav";
+const pageTitle = "Krishnanand Yadav | Full Stack Developer";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -15,6 +16,10 @@ const pageTitle = "Krishnanand Yadav";
 
   <section id="about" class="min-h-screen">
     <About />
+  </section>
+
+  <section id="experience" class="min-h-screen">
+    <Experience />
   </section>
 
   <section id="projects" class="min-h-screen">

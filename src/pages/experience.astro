@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon/components";
+
+import { experiences } from "../data/experienceData";
+---
+
+<h1 class="text-xl lg:text-3xl font-bold my-4">Experience</h1>
+
+<div class="my-6">
+  <div class="flex flex-col gap-8">
+    {
+      experiences.map((exp) => (
+        <div class="flex flex-col gap-4 pb-8 border-b border-black/30 last:border-b-0">
+          <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 lg:gap-28 text-sm lg:text-base">
+            <div>
+              <p class="text-base lg:text-lg font-bold">{exp.title}</p>
+              <p class="mt-1">
+                <em>{exp.period}</em>
+              </p>
+            </div>
+
+            <div class="lg:text-right">
+              <p>
+                <strong>{exp.company}</strong>
+              </p>
+              <p>
+                <em>{exp.location}</em>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            {exp.skillIcons.map((icon) => (
+              <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100/80 border border-dashed border-zinc-700 rounded-lg hover:scale-95 transition-all">
+                <Icon name={icon} size={20} />
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <ul class="text-sm lg:text-base list-[square] list-inside flex flex-col gap-2">
+              {exp.description.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
