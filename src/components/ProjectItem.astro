@@ -4,33 +4,39 @@ import { Icon } from "astro-icon/components";
 const { project, index } = Astro.props;
 
 const accents = [
-  "bg-amber-400",
-  "bg-rose-400",
-  "bg-indigo-400",
-  "bg-emerald-400",
-  "bg-purple-400",
+  "from-emerald-400 via-green-300 to-lime-300",
+  "from-purple-400 via-violet-300 to-fuchsia-300",
+  "from-indigo-400 via-blue-300 to-cyan-300",
+  "from-amber-400 via-yellow-300 to-orange-300",
+  "from-rose-400 via-pink-300 to-red-300",
 ];
 const accent = accents[index % accents.length];
 ---
 
 <div
-  class="group relative rounded-xl border border-black/10 bg-[#fffaf0]/80 p-5 lg:p-6 shadow-sm hover:shadow-md transition-all duration-300"
+  class="group relative rounded-xl border border-black/10 bg-[#fffaf0]/80 p-5 lg:p-6 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
 >
-  <!-- Top accent -->
-  <div class={`absolute top-0 left-0 w-full h-1 rounded-t-xl ${accent}`}></div>
+  <div class={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${accent}`}>
+  </div>
 
-  <!-- Title -->
-  <h2 class="text-lg lg:text-2xl font-semibold mb-2 tracking-tight">
+  <div
+    class={`absolute inset-0 bg-gradient-to-br ${accent} blur-2xl opacity-5 pointer-events-none`}
+  >
+  </div>
+
+  <h2
+    class="text-lg lg:text-2xl font-semibold mb-2 tracking-tight relative z-10"
+  >
     {project.name}
   </h2>
 
-  <!-- Main Description -->
-  <p class="text-sm lg:text-base text-black/60 mb-4 leading-relaxed">
+  <p
+    class="text-sm lg:text-base text-black/60 mb-4 leading-relaxed relative z-10"
+  >
     {project.descriptionPoints[0]}
   </p>
 
-  <!-- Tech stack -->
-  <div class="mb-4 flex flex-wrap gap-2">
+  <div class="mb-4 flex flex-wrap gap-2 relative z-10">
     {
       project.skillIcons.map((icon) => (
         <div class="flex items-center justify-center px-3 py-1 rounded-full bg-black/[0.05] border border-black/[0.08]">
@@ -40,10 +46,9 @@ const accent = accents[index % accents.length];
     }
   </div>
 
-  <!-- Extra Points -->
   {
     project.descriptionPoints.length > 1 && (
-      <ul class="mb-5 text-sm text-black/70 flex flex-col gap-2">
+      <ul class="mb-5 text-sm text-black/70 flex flex-col gap-2 relative z-10">
         {project.descriptionPoints.slice(1).map((point) => (
           <li class="flex gap-2">
             <span class="mt-1.5 w-1 h-1 rounded-full bg-black/40" />
@@ -54,9 +59,7 @@ const accent = accents[index % accents.length];
     )
   }
 
-  <!-- Buttons (PILLS) -->
-  <div class="flex items-center gap-3 pt-2">
-    <!-- Primary pill -->
+  <div class="flex items-center gap-3 pt-2 relative z-10">
     <a
       href={project.liveLink}
       target="_blank"
@@ -66,7 +69,6 @@ const accent = accents[index % accents.length];
       <span>{project.name === "WarTime Game" ? "Play Game" : "Live"}</span>
     </a>
 
-    <!-- Secondary pill -->
     <a
       href={project.code}
       target="_blank"
