@@ -32,34 +32,51 @@ import { skillsData } from "../data/skillsData";
   </div>
 </div>
 
-<div class="my-24">
-  <h2 class="text-lg lg:text-2xl font-semibold mb-4">Education</h2>
-  <div class="flex flex-col divide-y divide-black/30">
-    <div
-      class="mb-4 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 lg:gap-28 text-sm lg:text-base"
+<div class="my-8 border border-black/15 rounded-xl overflow-hidden">
+  <button
+    id="edu-btn"
+    onclick="const open = this.getAttribute('aria-expanded') === 'true'; this.setAttribute('aria-expanded', !open); document.getElementById('edu-content').classList.toggle('hidden', open); document.getElementById('edu-chev').classList.toggle('rotate-180', !open);"
+    aria-expanded="false"
+    class="w-full flex items-center justify-between px-4 py-3 hover:bg-black/5 transition-colors"
+  >
+    <span class="text-sm font-medium">Education</span>
+    <svg
+      id="edu-chev"
+      class="w-4 h-4 text-black/40 transition-transform duration-200"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <div>
-        <p>Integrated M.Sc. Computer Science</p>
-        <p><em>Oct. 2021 - May 2026</em></p>
-      </div>
+      <path
+        d="M4 6l4 4 4-4"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </button>
 
+  <div id="edu-content" class="hidden border-t border-black/15">
+    <div class="flex justify-between items-center px-4 py-3 text-sm gap-4">
       <div>
-        <p><strong>Pondicherry University</strong></p>
-        <p><em>Puducherry, India</em></p>
+        <p class="font-medium">Integrated M.Sc. Computer Science</p>
+        <p class="text-xs text-black/50 mt-0.5">Oct 2021 – May 2026</p>
+      </div>
+      <div class="text-right">
+        <p class="font-medium">Pondicherry University</p>
+        <p class="text-xs text-black/50 mt-0.5">Puducherry, India</p>
       </div>
     </div>
-
     <div
-      class="pt-4 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 lg:gap-28 text-sm lg:text-base"
+      class="flex justify-between items-center px-4 py-3 text-sm gap-4 border-t border-black/15"
     >
       <div>
-        <p>Higher Secondary (Class XII)</p>
-        <p><em>Apr. 2020 - May 2021</em></p>
+        <p class="font-medium">Higher Secondary (Class XII)</p>
+        <p class="text-xs text-black/50 mt-0.5">Apr 2020 – May 2021</p>
       </div>
-
-      <div>
-        <p><strong>Jawahar Navodaya Vidyalaya</strong></p>
-        <p><em>West Bengal, India</em></p>
+      <div class="text-right">
+        <p class="font-medium">Jawahar Navodaya Vidyalaya</p>
+        <p class="text-xs text-black/50 mt-0.5">West Bengal, India</p>
       </div>
     </div>
   </div>
