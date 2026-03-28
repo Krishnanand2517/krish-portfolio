@@ -32,14 +32,14 @@ import { skillsData } from "../data/skillsData";
   </div>
 </div>
 
-<div class="my-8 border border-black/15 rounded-xl overflow-hidden">
+<div class="mt-8 mb-16 border border-black/15 rounded-xl overflow-hidden">
   <button
     id="edu-btn"
     onclick="const open = this.getAttribute('aria-expanded') === 'true'; this.setAttribute('aria-expanded', !open); document.getElementById('edu-content').classList.toggle('hidden', open); document.getElementById('edu-chev').classList.toggle('rotate-180', !open);"
     aria-expanded="false"
     class="w-full flex items-center justify-between px-4 py-3 hover:bg-black/5 transition-colors"
   >
-    <span class="text-sm font-medium">Education</span>
+    <span class="font-semibold">Education</span>
     <svg
       id="edu-chev"
       class="w-4 h-4 text-black/40 transition-transform duration-200"

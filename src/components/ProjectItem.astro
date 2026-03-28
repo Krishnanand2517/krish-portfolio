@@ -1,31 +1,76 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { project } = Astro.props;
+const { project, index } = Astro.props;
+
+const accents = [
+  "bg-amber-400",
+  "bg-rose-400",
+  "bg-indigo-400",
+  "bg-emerald-400",
+  "bg-purple-400",
+];
+const accent = accents[index % accents.length];
 ---
 
 <div
-  class={`px-2 py-4 lg:p-6 ${project.bgColor} hover:shadow-2xl border border-dashed border-zinc-700 rounded-lg group transition-all duration-700`}
+  class="group relative rounded-xl border border-black/10 bg-[#fffaf0]/80 p-5 lg:p-6 shadow-sm hover:shadow-md transition-all duration-300"
 >
-  <h1 class="text-xl lg:text-2xl text-center">{project.name}</h1>
+  <!-- Top accent -->
+  <div class={`absolute top-0 left-0 w-full h-1 rounded-t-xl ${accent}`}></div>
 
-  <div class="my-3 flex justify-center items-center gap-4">
-    {project.skillIcons.map((icon) => <Icon name={icon} size={24} />)}
+  <!-- Title -->
+  <h2 class="text-lg lg:text-2xl font-semibold mb-2 tracking-tight">
+    {project.name}
+  </h2>
+
+  <!-- Main Description -->
+  <p class="text-sm lg:text-base text-black/60 mb-4 leading-relaxed">
+    {project.descriptionPoints[0]}
+  </p>
+
+  <!-- Tech stack -->
+  <div class="mb-4 flex flex-wrap gap-2">
+    {
+      project.skillIcons.map((icon) => (
+        <div class="flex items-center justify-center px-3 py-1 rounded-full bg-black/[0.05] border border-black/[0.08]">
+          <Icon name={icon} size={16} />
+        </div>
+      ))
+    }
   </div>
 
-  <div class="mt-3 mb-4 flex justify-evenly gap-8">
+  <!-- Extra Points -->
+  {
+    project.descriptionPoints.length > 1 && (
+      <ul class="mb-5 text-sm text-black/70 flex flex-col gap-2">
+        {project.descriptionPoints.slice(1).map((point) => (
+          <li class="flex gap-2">
+            <span class="mt-1.5 w-1 h-1 rounded-full bg-black/40" />
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  <!-- Buttons (PILLS) -->
+  <div class="flex items-center gap-3 pt-2">
+    <!-- Primary pill -->
     <a
       href={project.liveLink}
-      class="text-sm lg:text-base flex gap-1 items-center p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
       target="_blank"
+      class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm rounded-full bg-black text-white hover:bg-black/80 transition-all duration-300"
     >
-      <Icon name="mdi:link" size={20} />
-      <span>{project.name === "WarTime Game" ? "Game" : "Live"} Link</span>
+      <Icon name="mdi:link" size={16} />
+      <span>{project.name === "WarTime Game" ? "Play Game" : "Live"}</span>
     </a>
+
+    <!-- Secondary pill -->
     <a
       href={project.code}
-      class="text-sm lg:text-base flex gap-1 items-center p-2 hover:bg-black/10 rounded-md transition-colors duration-300"
       target="_blank"
+      class="inline-flex items-center gap-1.5 px-4 py-1.5 text-sm rounded-full border border-black/20 hover:bg-black/5 transition-all duration-300"
     >
       <Icon
         name={project.name === "WarTime Game" ? "mdi:video" : "mdi:code-braces"}
@@ -33,13 +78,5 @@ const { project } = Astro.props;
       />
       <span>{project.name === "WarTime Game" ? "Video" : "Code"}</span>
     </a>
-  </div>
-
-  <div
-    class="bg-black/10 p-4 rounded-md lg:text-black/20 group-hover:text-black transition-colors duration-300"
-  >
-    <ul class="text-sm lg:text-base list-disc list-inside flex flex-col gap-2">
-      {project.descriptionPoints.map((point) => <li>{point}</li>)}
-    </ul>
   </div>
 </div>

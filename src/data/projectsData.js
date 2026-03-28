@@ -20,7 +20,6 @@ export const projectsData = [
       "Demo Account 1 - Email: demo.user.projects@gmail.com  Password: #CollabBoard25",
       "Demo Account 2 - Email: krishnanand2517@gmail.com Password: #CollabBoard25",
     ],
-    bgColor: "bg-amber-100 lg:bg-transparent hover:bg-amber-100",
   },
   {
     name: "WeTalk",
@@ -40,7 +39,6 @@ export const projectsData = [
       "Real-time text chat using SocketIO.",
       "Mobile Friendly!",
     ],
-    bgColor: "bg-red-50 lg:bg-transparent hover:bg-red-50",
   },
   {
     name: "Project Ignite",
@@ -63,7 +61,6 @@ export const projectsData = [
       "CRUD operations based on user roles.",
       "Demo Account - Username: ironman Password: savepeter",
     ],
-    bgColor: "bg-purple-50 lg:bg-transparent hover:bg-purple-50",
   },
   {
     name: "WarTime Game",
@@ -75,7 +72,6 @@ export const projectsData = [
       "Responsive movement using quaternions.",
       "Enemy logic for engaging back-and-forth combat.",
     ],
-    bgColor: "bg-green-50 lg:bg-transparent hover:bg-green-50",
   },
   {
     name: "Portfolio Website",
@@ -92,7 +88,6 @@ export const projectsData = [
       "Fully responsive and mobile friendly.",
       "Deployed on Oracle Cloud Infrastructure (OCI), with Nginx as a reverse proxy and set up HTTPS using Let’s Encrypt and Certbot.",
     ],
-    bgColor: "bg-amber-100/40 lg:bg-transparent hover:bg-amber-100/40",
   },
   {
     name: "'Task Manager - Minimalist' Android App",
@@ -109,6 +104,5 @@ export const projectsData = [
       "Dark/light mode.",
       "Undo deletion in Snackbar.",
     ],
-    bgColor: "bg-blue-50 lg:bg-transparent hover:bg-blue-50",
   },
 ];
