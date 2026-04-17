@@ -1,6 +1,7 @@
 export const projectsData = [
   {
     name: "CollabBoard",
+    image: "project1-collabboard.png",
     skillIcons: [
       "skill-icons:typescript",
       "skill-icons:react-dark",
@@ -22,6 +23,7 @@ export const projectsData = [
   },
   {
     name: "Diarist",
+    image: "project2-diarist.png",
     skillIcons: [
       "skill-icons:typescript",
       "skill-icons:nextjs-light",
@@ -43,26 +45,8 @@ export const projectsData = [
     ],
   },
   {
-    name: "WeTalk",
-    skillIcons: [
-      "skill-icons:typescript",
-      "skill-icons:react-dark",
-      "skill-icons:tailwindcss-dark",
-      "skill-icons:nodejs-dark",
-      "simple-icons:webrtc",
-      "simple-icons:socketdotio",
-    ],
-    liveLink: "https://we-talk-webrtc.vercel.app",
-    code: "https://github.com/Krishnanand2517/webrtc-video-chat",
-    descriptionPoints: [
-      "A Peer-to-Peer video chat platform.",
-      "Low latency video stream using WebRTC.",
-      "Real-time text chat using SocketIO.",
-      "Mobile Friendly!",
-    ],
-  },
-  {
     name: "Project Ignite",
+    image: "project3-ignite.png",
     skillIcons: [
       "skill-icons:javascript",
       "skill-icons:react-dark",
@@ -83,7 +67,28 @@ export const projectsData = [
     ],
   },
   {
+    name: "WeTalk",
+    image: "project4-wetalk.png",
+    skillIcons: [
+      "skill-icons:typescript",
+      "skill-icons:react-dark",
+      "skill-icons:tailwindcss-dark",
+      "skill-icons:nodejs-dark",
+      "simple-icons:webrtc",
+      "simple-icons:socketdotio",
+    ],
+    liveLink: "https://we-talk-webrtc.vercel.app",
+    code: "https://github.com/Krishnanand2517/webrtc-video-chat",
+    descriptionPoints: [
+      "A Peer-to-Peer video chat platform.",
+      "Low latency video stream using WebRTC.",
+      "Real-time text chat using SocketIO.",
+      "Mobile Friendly!",
+    ],
+  },
+  {
     name: "WarTime Game",
+    image: "project5-wartime.png",
     skillIcons: ["skill-icons:unity-dark", "skill-icons:cs"],
     liveLink: "https://krishnanand.itch.io/wartime",
     code: "https://youtu.be/x7Pi6tiBncw",
@@ -95,6 +100,7 @@ export const projectsData = [
   },
   {
     name: "Portfolio Website",
+    image: "project6-portfolio.png",
     skillIcons: [
       "skill-icons:javascript",
       "skill-icons:astro",
