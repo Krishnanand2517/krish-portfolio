@@ -23,10 +23,11 @@ export const skillsData = {
     { icon: "simple-icons:webrtc", name: "WebRTC" },
     { icon: "skill-icons:redis-light", name: "Redis" },
   ],
-  Databases: [
+  "Databases & ORMs": [
     { icon: "skill-icons:postgresql-light", name: "PostgreSQL" },
     { icon: "skill-icons:mysql-dark", name: "MySQL" },
     { icon: "skill-icons:mongodb", name: "MongoDB" },
+    { icon: "simple-icons:drizzle", name: "Drizzle ORM" },
   ],
   "Dev Tools": [
     { icon: "skill-icons:git", name: "Git" },
