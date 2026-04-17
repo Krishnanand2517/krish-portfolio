@@ -112,7 +112,8 @@ export const projectsData = [
     descriptionPoints: [
       "The website that you're looking at right now!",
       "Fully responsive and mobile friendly.",
-      "Deployed on Oracle Cloud Infrastructure (OCI), with Nginx as a reverse proxy and set up HTTPS using Let’s Encrypt and Certbot.",
+      "Deployed on Oracle Cloud Infrastructure (OCI), with Nginx as a reverse proxy and set up HTTPS using Let's Encrypt and Certbot.",
+      "Implemented image optimization and multi-format image delivery.",
     ],
   },
 ];
