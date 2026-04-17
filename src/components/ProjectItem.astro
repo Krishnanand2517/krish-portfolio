@@ -1,4 +1,5 @@
 ---
+import { getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 interface Project {
@@ -16,6 +17,24 @@ interface Props {
 }
 
 const { project, index } = Astro.props;
+
+// Import image dynamically (important for optimization)
+const projectImg = await import(`../assets/project-imgs/${project.image}`);
+
+// Generate AVIF + WebP versions
+const avif = await getImage({
+  src: projectImg.default,
+  format: "avif",
+  widths: [400, 800, 1200],
+  quality: 60,
+});
+
+const webp = await getImage({
+  src: projectImg.default,
+  format: "webp",
+  widths: [400, 800, 1200],
+  quality: 70,
+});
 
 const accents = [
   "from-emerald-400 via-green-300 to-lime-300",
@@ -40,12 +59,29 @@ const accent = accents[index % accents.length];
   </div>
 
   <div class="relative z-10 mb-3 sm:mb-4 overflow-hidden rounded-lg">
-    <img
-      src=`/project-imgs/${project.image}`
-      alt={project.name}
-      class="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-      loading="lazy"
-    />
+    <picture>
+      <!-- AVIF -->
+      <source
+        srcset={avif.srcSet.attribute}
+        type="image/avif"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
+
+      <!-- WebP -->
+      <source
+        srcset={webp.srcSet.attribute}
+        type="image/webp"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
+
+      <!-- Fallback -->
+      <img
+        src={webp.src}
+        alt={project.name}
+        loading="lazy"
+        class="project-img w-full h-40 sm:h-48 object-cover transition-all duration-500 group-hover:scale-105 blur-md scale-105"
+      />
+    </picture>
   </div>
 
   <h2
@@ -108,3 +144,23 @@ const accent = accents[index % accents.length];
     </a>
   </div>
 </div>
+
+<!-- Blur-up script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".project-img");
+
+    images.forEach((img) => {
+      const image = img as HTMLImageElement;
+
+      if (image.complete) {
+        image.classList.remove("blur-md", "scale-105");
+        return;
+      }
+
+      image.addEventListener("load", () => {
+        image.classList.remove("blur-md", "scale-105");
+      });
+    });
+  });
+</script>
